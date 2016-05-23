@@ -1,0 +1,17 @@
+<h2>List of all contacts</h2>
+
+<table>
+{{#each model as |contact|}}
+	<tr>
+	
+		<td>{{#link-to 'contacts.edit' contact.id}}name:{{contact.name}}{{/link-to}}</td>
+		<td>mobile{{contact.mobile}}</td>
+		<td>street1{{contact.street1}}</td>
+		<td>street2{{contact.street2}}</td>
+		<td>city{{contact.city}}</td>
+		<td>emailId{{contact.emailId}}</td>
+		<button {{action 'deleteContact' contact.id}}> Delete </button>
+	</tr>
+	{{/each}}
+</table>
+{{outlet}}
